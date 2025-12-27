@@ -117,42 +117,60 @@ function initHeroAnimations() {
    * The overlaps ('-=0.6', '-=0.4', '-=0.2') create a cascading effect
    * where elements appear to flow in rather than pop one by one.
    */
-  heroTl
-    // First: Main title slides up and fades in
-    .from(".hero-title", {
-      y: 100, // Start 100px below final position
-      opacity: 0, // Start invisible
-      duration: 1, // Take 1 second to animate
-    })
-    // Second: Subtitle follows (overlaps by 0.6s for smooth flow)
-    .from(
-      ".hero-subtitle",
-      {
-        y: 50,
+  const heroTitle = document.querySelector(".hero-title");
+  const heroSubtitle = document.querySelector(".hero-subtitle");
+  const heroCta = document.querySelector(".hero-cta");
+  const scrollIndicator = document.querySelector(".scroll-indicator");
+
+  if (heroTitle || heroSubtitle || heroCta || scrollIndicator) {
+    const heroTl = gsap.timeline();
+
+    if (heroTitle) {
+      heroTl.from(heroTitle, {
+        y: 100,
         opacity: 0,
-        duration: 0.8,
-      },
-      "-=0.6" // Start 0.6s before title animation ends
-    )
-    // Third: CTA buttons (overlaps by 0.4s)
-    .from(
-      ".hero-cta",
-      {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-      },
-      "-=0.4"
-    )
-    // Fourth: Scroll indicator (just fades in, overlaps by 0.2s)
-    .from(
-      ".scroll-indicator",
-      {
-        opacity: 0,
-        duration: 0.5,
-      },
-      "-=0.2"
-    );
+        duration: 1,
+        ease: "power2.out",
+      });
+    }
+
+    if (heroSubtitle) {
+      heroTl.from(
+        heroSubtitle,
+        {
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.6"
+      );
+    }
+
+    if (heroCta) {
+      heroTl.from(
+        heroCta,
+        {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
+    }
+
+    if (scrollIndicator) {
+      heroTl.from(
+        scrollIndicator,
+        {
+          opacity: 0,
+          duration: 0.5,
+        },
+        "-=0.2"
+      );
+    }
+  }
 
   /**
    * INFINITE FLOATING ANIMATIONS (Ambient Motion)
