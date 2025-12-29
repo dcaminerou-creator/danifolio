@@ -251,39 +251,128 @@ body {
 /* --------------------------------------------------------------------------
    5. About Section
    -------------------------------------------------------------------------- */
-.about-image {
-  position: relative;
+/* =========================
+   ABOUT ME – FINAL
+   ========================= */
+.about-me {
+  background: transparent;
 }
 
-.about-image::before {
-  content: "";
+/* ======= CONTROL STAR SIZE AQUÍ ======= */
+:root {
+  --starSize: 500px; /* Desktop: cámbialo a tu gusto (220-280 suele ser ideal) */
+}
+
+/* Left side */
+
+/* Quitamos text-center y controlamos alineación nosotros */
+.about-me__content {
+  max-width: 560px;
+  margin-top: -200px;
+}
+
+/* Star: tamaño controlado + colocación tipo referencia */
+.about-me__star-wrap {
+  position: relative;
+  width: var(--starSize);
+}
+
+.about-me__star {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-me__star-text {
   position: absolute;
-  inset: 18px -18px -18px 18px;
-  border-radius: 1rem;
-  border: 1px solid var(--border-soft);
-  z-index: -1;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: end;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #111;
+  line-height: 1.05;
+  font-size: 18px;
+  margin-top: 30px;
 }
 
-.about-image img {
-  position: relative;
-  z-index: 1;
+/* Copy: alineado a la derecha como tu referencia */
+.about-me__copy {
+  font-family: "Montserrat", sans-serif;
+  color: #111;
+  text-align: right; /* <-- CLAVE */
+  margin-top: -60px;
 }
 
-.lead {
-  font-weight: 400;
+.about-me__copy p {
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 500;
 }
 
-/* Skills progress bars */
-.progress {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 999px;
-  overflow: hidden;
+.about-me__copy .bold {
+  font-weight: 700;
 }
 
-.progress-bar {
-  background: linear-gradient(90deg, var(--accent), #ff9eca);
-  border-radius: 999px;
-  width: 0;
+/* Right side – PNG sin fondo */
+.about-me__right {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: transparent;
+}
+
+.about-me__img {
+  height: 92vh;
+  max-width: 92%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ======= Responsive: estrella proporcional por breakpoint ======= */
+@media (max-width: 1200px) {
+  :root {
+    --starSize: 210px;
+  }
+  .about-me__star-wrap {
+    margin-left: 70px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  :root {
+    --starSize: 170px;
+  }
+
+  .about-me__right {
+    min-height: 60vh;
+    justify-content: center;
+  }
+
+  .about-me__img {
+    height: 60vh;
+    max-width: 85%;
+  }
+
+  .about-me__star-wrap {
+    margin: 0 auto 18px auto; /* en móvil centrada */
+  }
+
+  .about-me__copy {
+    text-align: center; /* en móvil mejor centrado */
+  }
+
+  .about-me__lastline {
+    text-align: center;
+  }
 }
 
 /* --------------------------------------------------------------------------
