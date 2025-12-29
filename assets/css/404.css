@@ -63,7 +63,7 @@
 }
 
 /* Botones tipo “pill” (sin depender de Bootstrap) */
-
+/* Botones tipo “pill” */
 .btn-pill {
   display: inline-flex;
   align-items: center;
@@ -86,12 +86,20 @@
   transform: translateY(-1px);
 }
 
-.btn-pill--dark {
+/* IMPORTANTÍSIMO: anula colores de links (visited incluido) SOLO en 404 */
+.page-404 .btn-pill,
+.page-404 .btn-pill:visited {
+  color: #111;
+}
+
+.page-404 .btn-pill--dark,
+.page-404 .btn-pill--dark:visited {
   background: #111;
   color: #fff;
 }
 
-.btn-pill--ghost {
+.page-404 .btn-pill--ghost,
+.page-404 .btn-pill--ghost:visited {
   background: transparent;
   color: #111;
   border: 1px solid rgba(0, 0, 0, 0.15);
