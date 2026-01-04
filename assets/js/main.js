@@ -117,7 +117,8 @@ function initHeroAnimations() {
    * The overlaps ('-=0.6', '-=0.4', '-=0.2') create a cascading effect
    * where elements appear to flow in rather than pop one by one.
    */
-  const heroTitle = document.querySelector(".hero-title");
+  const heroTitle = document.querySelector(".hero-name");
+
   const heroSubtitle = document.querySelector(".hero-subtitle");
   const heroCta = document.querySelector(".hero-cta");
   const scrollIndicator = document.querySelector(".scroll-indicator");
@@ -412,7 +413,7 @@ function initSkillBars() {
 function initProjectCards() {
   if (prefersReducedMotion) return;
 
-  ScrollTrigger.batch(".project-card", {
+  ScrollTrigger.batch(".meme-tile", {
     /**
      * onEnter receives an array of ALL elements that just entered the viewport
      * (in this scroll frame). We animate them as a batch with stagger.
@@ -519,7 +520,7 @@ function initSmoothScroll() {
 document.addEventListener("DOMContentLoaded", () => {
   initHeroAnimations();
   initScrollReveals();
-  initSkillBars();
+  // initSkillBars();
   initProjectCards();
   initNavbarScroll();
   initSmoothScroll();
