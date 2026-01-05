@@ -1,0 +1,171 @@
+/* =========================================================
+   PROJECT PAGE — scoped para no chocar con index.css
+   ========================================================= */
+
+.project-page {
+  padding-top: 84px; /* navbar fixed */
+}
+
+/* ---------- TITLE ---------- */
+.project-page .project-title {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  margin: 10px 0 34px;
+}
+
+/* ---------- GRID ---------- */
+.project-page .project-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 560px) 1fr;
+  align-items: start;
+  gap: 24px;
+}
+
+/* Alinea los laterales al centro vertical del bloque de la galería */
+.project-page .project-grid {
+  align-items: center; /* en vez de start */
+}
+
+.project-page .project-side {
+  padding-top: 0; /* fuera el empuje */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centra vertical */
+  height: 100%;
+}
+
+/* opcional: si quieres que estén exactamente a la altura del frame */
+
+.project-page .project-side__text {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+  margin: 0;
+  color: #111;
+}
+
+.project-page .project-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ---------- GALLERY ---------- */
+.project-page .gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🔴 CLAVE: aquí se estaba rompiendo */
+.project-page .gallery__frame {
+  width: 100%;
+  max-width: 420px; /* tamaño tipo referencia */
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* neutraliza img global de index.css */
+.project-page .gallery__frame img,
+.project-page .gallery__image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---------- ARROWS ---------- */
+.project-page .gallery__arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  font-size: 28px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* ---------- CONTROLS ---------- */
+.project-page .gallery-controls {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.project-page .gallery__counter {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* ---------- EXPANDED GRID ---------- */
+.project-page .gallery-expanded {
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.project-page .gallery-thumb {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.project-page .gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- COPY ---------- */
+.project-page .project-copy {
+  max-width: 520px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 991.98px) {
+  .project-page .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-page .gallery-expanded {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .project-page .gallery__frame,
+  .project-page .gallery-controls,
+  .project-page .gallery-expanded {
+    max-width: 300px;
+  }
+}
