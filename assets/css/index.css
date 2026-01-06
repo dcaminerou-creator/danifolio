@@ -20,6 +20,7 @@
   --accent-soft: #ffd3e7;
   --border-soft: #f3c7da;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --starSize: 500px;
 }
 
 /* --------------------------------------------------------------------------
@@ -259,9 +260,6 @@ body {
 }
 
 /* ======= CONTROL STAR SIZE AQUÍ ======= */
-:root {
-  --starSize: 500px; /* Desktop: cámbialo a tu gusto (220-280 suele ser ideal) */
-}
 
 /* Left side */
 
@@ -663,12 +661,5 @@ footer {
 
   .about-image::before {
     display: none;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
   }
 }
