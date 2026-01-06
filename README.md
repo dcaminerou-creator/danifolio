@@ -16,6 +16,10 @@ Plantilla profesional de portfolio lista para clonarse y personalizarse en futur
 danifolio/
 ├── index.html
 ├── 404.html
+├── project-1.html
+├── project-2.html
+├── project-3.html
+├── project-4.html
 ├── README.md
 ├── LICENSE
 ├── .gitignore
