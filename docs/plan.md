@@ -1,61 +1,103 @@
-# plan1 — Preparación de entrega + checklist profesional (Portfolio Template)
+# plan1 — Planificación y preparación de entrega
 
-## Prompt (a la IA)
+Portfolio Template (Bootstrap + GSAP)
 
-Necesito cumplir el brief del proyecto final (portfolio template) partiendo de una plantilla ya iniciada. Dame un plan paso a paso para:
+Este documento recoge la **fase de planificación previa** del proyecto y sirve como
+evidencia del enfoque metodológico seguido antes de la implementación final del portfolio.
 
-- dejar el repositorio profesional (README, LICENSE, .gitignore, 404)
-- asegurar deploy en GitHub Pages
-- asegurar requisitos de responsive, semántica, accesibilidad básica
-- preparar tag v1.0.0 y GitHub Release
-  Quiero un orden de trabajo práctico y verificaciones concretas.
+El objetivo del plan fue definir un **flujo de trabajo profesional**, alineado con los
+requisitos del proyecto, el despliegue en GitHub Pages y los criterios de calidad esperados
+en una entrega real de frontend.
 
-## Plan recibido (resumen operativo)
+---
 
-1. **Repo & Deploy**
+## Objetivo del proyecto
 
-   - Verificar GitHub Pages en URL pública y probar en incógnito.
-   - Asegurar rutas relativas a assets (./assets/...).
-   - Asegurar existencia de 404.html con navegación de vuelta al inicio.
+Desarrollar una **plantilla de portfolio profesional**, clara y reutilizable, que pueda
+servir como base para futuros proyectos personales o profesionales, cumpliendo criterios de:
 
-2. **Documentación**
+- estructura semántica
+- responsive design
+- accesibilidad básica
+- animaciones cuidadas
+- control de versiones y despliegue profesional
 
-   - README con enlace al deploy en primera línea.
-   - Instrucciones de ejecución local + guía de personalización.
-   - Sección “Uso de IA” describiendo el flujo en dos fases.
-   - LICENSE en raíz y .gitignore completo.
+---
 
-3. **Estructura y calidad**
+## Plan de trabajo definido
 
-   - HTML semántico (header/nav/main/section/footer), un solo h1.
-   - CSS organizado y mantenible (variables, layout, components).
-   - Sin errores en consola en producción.
+### 1. Repositorio y despliegue
 
-4. **Responsive**
+- Configurar un repositorio público con nombre claro y estructura limpia.
+- Verificar el despliegue correcto en GitHub Pages mediante una URL pública.
+- Probar el sitio en modo incógnito para evitar falsos positivos por caché.
+- Asegurar rutas relativas correctas a todos los assets.
+- Incluir una página `404.html` personalizada con navegación de retorno al inicio.
 
-   - Mobile-first, sin scroll horizontal.
-   - Tipografía fluida con clamp().
-   - Grid de proyectos con CSS Grid auto-fit/minmax.
+---
 
-5. **Animación e interactividad**
+### 2. Documentación del proyecto
 
-   - Transiciones CSS en elementos interactivos.
-   - GSAP + ScrollTrigger para reveals/parallax suave.
-   - prefers-reduced-motion para desactivar animaciones si el usuario lo solicita.
+- Redactar un `README.md` claro, con:
+  - enlace visible al sitio desplegado
+  - descripción del stack tecnológico
+  - instrucciones de ejecución local
+  - guía básica de personalización
+- Incluir licencia (`LICENSE`) y archivo `.gitignore` adecuados al stack utilizado.
 
-6. **Accesibilidad básica**
+---
 
-   - Alt en imágenes, foco visible, navegación por teclado.
-   - Contraste AA (aprox.) y no depender solo del color.
+### 3. Estructura y calidad de código
 
-7. **Entrega final**
-   - Commit final tipo release.
-   - Tag anotado v1.0.0 y push.
-   - Crear GitHub Release con notas.
+- Uso correcto de HTML semántico (`header`, `nav`, `main`, `section`, `footer`).
+- Jerarquía lógica de encabezados, con un solo `<h1>` por página.
+- Organización del CSS basada en:
+  - variables (custom properties)
+  - secciones y componentes
+- Comprobación de ausencia de errores de consola en producción.
 
-## Notas de implementación (qué se aplicó)
+---
 
-- Se actualizó README para que el enlace del deploy esté en la primera línea y se añadió sección de uso de IA.
-- Se añadió/actualizó este plan como evidencia de fase 1 antes de cambios relevantes.
-- Se verificó el despliegue en GitHub Pages y la página 404.
-- (Rellenar al final) Se creó tag v1.0.0 y GitHub Release.
+### 4. Diseño responsive
+
+- Enfoque mobile-first.
+- Comprobación de layout en distintos breakpoints (móvil, tablet, escritorio).
+- Prevención de scroll horizontal no deseado.
+- Tipografía fluida y escalable cuando procede.
+
+---
+
+### 5. Animación e interactividad
+
+- Uso de transiciones CSS en elementos interactivos.
+- Implementación de animaciones de entrada y scroll mediante GSAP y ScrollTrigger.
+- Animaciones suaves y no intrusivas, priorizando la legibilidad del contenido.
+- Implementación de `prefers-reduced-motion` para respetar las preferencias del usuario.
+
+---
+
+### 6. Accesibilidad básica
+
+- Inclusión de texto alternativo en imágenes.
+- Estados de foco visibles en elementos interactivos.
+- Navegación usable mediante teclado.
+- Contraste suficiente para una lectura cómoda (nivel básico).
+
+---
+
+### 7. Preparación de la entrega final
+
+- Revisión completa del despliegue y del comportamiento responsive.
+- Limpieza del repositorio y verificación del historial de commits.
+- Creación de un tag de versión `v1.0.0`.
+- Publicación de una GitHub Release asociada a dicha versión, con notas descriptivas.
+
+---
+
+## Notas de implementación
+
+- El `README.md` fue actualizado para incluir el enlace de despliegue y la información
+  necesaria para comprender y reutilizar la plantilla.
+- La estructura final del proyecto se ajustó al plan definido inicialmente.
+- El despliegue en GitHub Pages y la página 404 personalizada fueron verificados.
+- La versión final del proyecto fue etiquetada como `v1.0.0` y publicada mediante GitHub Release.
